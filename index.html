@@ -4,26 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <title>TODO-List</title>
+    <title>TODO-LIST</title>
 </head>
 
 <body>
     <div class="container">
         <div id="todo-list">
             <h2>TODO LIST</h2>
-                <input type="text" class="text" id="new-task" placeholder="Write your todo list here">
-                <input type="button" class="button" onclick="addTask()" value="ADD"> 
+            <input type="text" class="text" id="new-task" onkeyup="characterCounter(this.value)"
+                placeholder="Write your todo list here...">
+            <input type="button" class="button" onclick="addTask()" value="ADD">
+            <p id="error-message"></p>
         </div>
-        
         <div class="listed">
-            <h3>LIST OF WORKS TO DO:</h3>
+            <h2>LIST OF WORKS TO DO:</h2>
             <ul id="tasks-list"></ul>
+            
         </div>
     </div>
-
-
+    <div class="count">
+        <span id="count-checked"></span> task completed of <span id="count-total"></span>
+    </div>
 </body>
 
 </html>
